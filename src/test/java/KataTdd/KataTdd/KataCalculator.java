@@ -12,9 +12,18 @@ public class KataCalculator {
 	}
 	
 	@Test
-	public void fiveStringShouldReturn1(){
+	public void oneStringShouldReturn1(){
 		Calculator calculator = new Calculator();
 		int result = calculator.Add("5");
 		Assert.assertEquals(5, result);
 	}
+	
+	@Test
+	public void twoStringShouldReturnSum(){
+		Calculator calculator = new Calculator();
+		int result = calculator.Add("8,12");
+		Assert.assertEquals(20, result);
+	}
+	
+	
 }
