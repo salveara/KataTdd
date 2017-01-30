@@ -25,5 +25,10 @@ public class KataCalculator {
 		Assert.assertEquals(20, result);
 	}
 	
-	
+	@Test
+	public void unknownNumbersStringShouldReturnSum(){
+		Calculator calculator = new Calculator();
+		int result = calculator.Add("8,2,5");
+		Assert.assertEquals(15, result);
+	}
 }

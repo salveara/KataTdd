@@ -1,5 +1,7 @@
 package KataTdd.KataTdd;
 
+import java.util.ArrayList;
+
 public class Calculator {
 
 	public int Add(String numbers) {
@@ -10,9 +12,16 @@ public class Calculator {
 			if (position.equals(-1)){
 				return Integer.parseInt(numbers);
 			} else {
-				return Integer.parseInt(numbers.substring(0, position)) + Integer.parseInt(numbers.substring(position+1, numbers.length()));
+			int sum = 0;
+			int posAnt = 0;
+			while (position >= 0){
+				sum += Integer.parseInt(numbers.substring(posAnt, position));
+				posAnt = position + 1;
+				position = numbers.indexOf(',' , position + 1);
 			}
-			
+			sum += Integer.parseInt(numbers.substring(posAnt, numbers.length()));
+			return sum;
+			}
 		}
 	}
 
