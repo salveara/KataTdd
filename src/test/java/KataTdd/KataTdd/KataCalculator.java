@@ -28,7 +28,14 @@ public class KataCalculator {
 	@Test
 	public void unknownNumbersStringShouldReturnSum(){
 		Calculator calculator = new Calculator();
-		int result = calculator.Add("8,2,5");
-		Assert.assertEquals(15, result);
+		int result = calculator.Add("8,2,5,10");
+		Assert.assertEquals(25, result);
+	}
+	
+	@Test
+	public void linesStringShouldReturnSum(){
+		Calculator calculator = new Calculator();
+		int result = calculator.Add("1\n2,3\n1");
+		Assert.assertEquals(7, result);
 	}
 }
